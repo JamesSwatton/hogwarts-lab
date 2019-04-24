@@ -1,0 +1,7 @@
+<p><%= @student.first_name %> <%= @student.last_name %>, age <%= @student.age %>, house <%= @student.house().name %></p>
+
+<p><a href="./edit/<%= @student.id %>">Edit Student Details</a></p>
+
+<form action="/students/<%= @student.id %>/delete" method="post">
+  <input type="submit" value="Delete Student">
+</form>
