@@ -10,7 +10,7 @@
   <input type="number" name="age" id="age" value="<%= @student.age %>"/>
 
   <label for="house_select">Select House:</label>
-  <select name="house_id" id="house_select">
+  <!-- <select name="house_id" id="house_select">
     <option
       value="1"
         <%= "selected" if @student.house.name == "gryffindor"%>
@@ -19,14 +19,14 @@
     <option value="2"<%= "selected" if @student.house.name == "hufflepuff"%>>Hufflepuff</option>
     <option value="3"<%= "selected" if @student.house.name == "ravenclaw"%>>Ravenclaw</option>
     <option value="4"<%= "selected" if @student.house.name == "slytherin"%>>Slytherin</option>
+  </select> -->
+
+  <select name="house_id" id="house_select">
+      <% @houses.each do |house| %>
+        <option value="<%= house.id %>"><%= house.name %></option>
+      <% end %>
   </select>
 
   <input type="submit" value="Edit Student"/>
 
 </form>
-
-<select name="new_house_id_selector" id="new_selector">
-    <% @houses.each do |house| %>
-      <option value="<%= house.id %>"><%= house.name %></option>
-    <% end %>
-</select>
